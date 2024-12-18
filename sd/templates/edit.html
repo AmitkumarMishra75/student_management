@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <style>
+        .header h1 {
+            font-weight: bolder;
+            font-size: 3rem;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+        }
+
+        .form {
+            border: 5px solid rgb(255, 157, 0);
+            padding: 1.5rem;
+        }
+
+        .fg {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .sb {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .sb button {
+            height: 3rem;
+            width: 6rem;
+            font-weight: bolder;
+            border-radius: 0.3rem;
+        }
+
+        .b1 button a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .b1 button a:hover {
+            color: white;
+        }
+
+        .b1 button:hover{
+            cursor: pointer;
+            background-color: blue;
+        }
+
+        .b2 button:hover{
+            cursor: pointer;
+            background-color: rgb(27, 105, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Edit Student Data</h1>
+        </div>
+        <div class="form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="fg">
+                    <label for="">NAME :</label>
+                    <input type="text" name="NAME" id="" value="{{data2.NAME}}">
+                </div>
+            
+                <div class="fg">
+                    <label for="">QUALIFICATION :</label>
+                    <input type="text" name="QUALIFICATION" id="" value="{{data2.QUALIFICATION}}">
+                </div>
+            
+                <div class="fg">
+                    <label for="">GENDER :</label>
+                    <input type="text" name="GENDER" id="" value="{{data2.GENDER}}">
+                </div>
+            
+                <div class="fg">
+                    <label for="">YOP :</label>
+                    <input type="number" name="YOP" id="" value="{{data2.YOP}}">
+                </div>
+            
+                <div class="fg">
+                    <label for="">AGE :</label>
+                    <input type="number" name="AGE" id="" value="{{data2.AGE}}">
+                </div>
+            
+                <div class="fg">
+                    <label for="">SKILLS :</label>
+                    <input type="text" name="SKILLS" id="" value="{{data2.SKILLS}}">
+                </div>
+            
+                <div class="fg">
+                    <label for="">DOB :</label>
+                    <input type="date" name="DOB" id="" value="{{data2.DOB}}">
+                </div>
+            
+                <div class="fg">
+                    <label for="">ADDRESS :</label>
+                    <input type="text" name="ADDRESS" id="" value="{{data2.ADDRESS}}">
+                </div>
+            
+                <div class="fg">
+                    <label for="">MOCK_RATING :</label>
+                    <input type="text" name="MOCK_RATING" id="" value="{{data2.MOCK_RATING}}">
+                </div>
+            
+                <div class="fg">
+                    <label for="">DEPARTMENT :</label>
+                    <input type="text" name="DEPARTMENT" id="" value="{{data2.DEPARTMENT}}">
+                </div>
+            
+                <div class="sb">
+                    <div class="b1">
+                        <button>
+                            <a href="{% url 'display' data2.id %}">
+                                Back
+                            </a>
+                        </button>
+                    </div>
+                    <div class="b2">
+                        <button type="submit">Submit</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        #imghead h1 {
+            font-weight: bolder;
+            font-size: 5rem;
+        }
+
+        #std {
+            text-align: center;
+        }
+        
+        #std h1 {
+            font-weight: bolder;
+            font-size: 3rem;
+        }
+
+        .card {
+            width: 320px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #af8e4c;
+            color: #fff;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .qualification {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .card-body {
+            padding: 20px;
+            height: 120px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col-6 {
+            flex-basis: 48%;
+        }
+
+        .card-footer {
+            background-color: #af8e4c;
+            color: #fff;
+            padding: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            text-align: center;
+        }
+
+        strong {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .button {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 10%;
+            margin-top: 1.2rem;
+            margin-bottom: 1.2rem;
+            /* border: 2px solid; */
+        }
+
+        .button-con button {
+            padding: 1rem;
+            border-radius: 1rem;
+            width: 5rem;
+            height: 3rem;
+        }
+
+        .button-con button:hover {
+            cursor: pointer;
+            background-color: rgb(127, 255, 238);
+        }
+
+        .delete button:hover {
+            background-color: rgb(238, 8, 8);
+        }
+
+        .links a{
+            text-decoration: none;
+            color: #000;
+        }
+
+        button {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="name">{{data1.NAME}}</h2>
+                <p class="qualification">{{data1.QUALIFICATION}}</p>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-6">
+                    <p><strong>Age:</strong> {{data1.AGE}}</p>
+                    <p><strong>Address:</strong> {{data1.ADDRESS}}</p>
+                    <p><strong>DOB:</strong> {{data1.DOB}}</p>
+                  </div>
+                  <div class="col-6">
+                    <p><strong>YOP:</strong> {{data1.YOP}}</p>
+                    <p><strong>Skills:</strong> {{data1.SKILLS}}</p>
+                    <p><strong>Gender:</strong> {{data1.GENDER}}</p>
+                  </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <p><strong>DEPARTMENT:</strong> {{data1.DEPARTMENT}}</p>
+            </div>
+            <div class="button">
+                <div class="button-con">
+                    <button type="submit">
+                        <div class="links">
+                            <a href="{% url 'name' %}">Back</a>
+                        </div>
+                    </button>
+                </div>
+                <div class="button-con">
+                    <button type="submit">
+                        <div class="links">
+                            <a href="{% url 'edit' data1.id %}">Edit</a>
+                        </div>
+                    </button>
+                </div>
+                <div class="button-con delete">
+                    <div class="links">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" onclick="return confirm('Are You sure you want to delete this student data ?')">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</body>
+</html>
