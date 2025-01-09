@@ -1,7 +1,7 @@
 # 🎓 Student Management System
 A Student Management web application built using HTML, CSS, Python, and Django Framework. This project enables efficient management of student records by categorizing them into different streams, and it allows CRUD (Create, Read, Update, Delete) operations on student data in an interactive user interface.
 
-#🌟 Features
+# 🌟 Features
 **Categorized Data:** <br>
 -  Students are displayed in different pages based on their streams.
 -  Details are displayed in a visually appealing card format.
